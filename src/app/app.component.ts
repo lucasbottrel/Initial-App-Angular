@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app-udemycourse';
+  language: string = 'Spanish';
+  listOfLanguages: string[] = ['English', 'Portuguese', 'Indian'];
+
+  addLanguage(){
+    this.listOfLanguages.push(this.language);
+    console.log(this.listOfLanguages);
+    
+  }
 }
