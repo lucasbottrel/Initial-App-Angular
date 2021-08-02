@@ -1,9 +1,23 @@
 <style>
-  h1 {
+  body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 </style>
 
-<h1>LIST OF LANGUAGES</h1>
-<input type="text" [(ngModel)]="language"/>
-<button (click)="addLanguage()">ADD</button>
+<body>
+  <h1>BEAUTIFUL WORLD</h1>
+  <input type="text" [(ngModel)]="language" />
+  <p>My language is {{ language }}</p>
+  <button (click)="addLanguage()">ADD</button>
+  <button (click)="deleteFirst()">DELETE FIRST</button>
+  <h2>List Of Languages</h2>
+  <ul>
+    <li *ngFor="let lang of listOfLanguages">
+      {{ lang }}
+    </li>
+  </ul>
+
+  <strong *ngIf="listOfLanguages.length > 3">
+    Congrats! You know more than 3 languages.
+  </strong>
+</body>
